@@ -1,12 +1,22 @@
-const express = require("express");
+const express = require('expess');
+const mysql = require('mysql');
+const port = 3000;
 
 
 const app = express();
+
+const db = mysql.createConnection({
+    host: 'localhost',
+    user: 'root',
+    password: '',
+
+
+})
 
 app.get("/", (req,res) => {
     res.send("<h1>Hello world</h1>");
 });
 
-app.listen(3000, () =>{
-    console.log("Server running on port 3000");
+app.listen(port, () =>{
+    console.log("");
 })
